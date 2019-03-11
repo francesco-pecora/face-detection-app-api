@@ -16,10 +16,8 @@ const PORT = process.env.PORT;
 const db = knex ({
     client: 'pg',
     connection: {
-      host : 'postgresql-aerodynamic-98374',
-      user : process.env.USER,
-      password : process.env.PASSWORD,
-      database : 'find-face-db'
+      connectionString : process.env.DATABASE_URL,
+      ssl: true,
     }
   });
 
